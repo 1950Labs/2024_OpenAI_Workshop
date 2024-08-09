@@ -1,0 +1,168 @@
+:host {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(95, 95, 95);
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.options {
+    background-color: #3a3a3a;
+    width: 100%;
+    color: white !important;
+    border-radius: 0 0 5px 5px;
+}
+
+.send-btn {
+    width: 170px;
+    height: 45px;
+    background-color: #1b1b1b;
+    border-radius: 0 0 5px 0;
+    color: white;
+}
+
+.send-btn:hover {
+    background-color: black;
+}
+
+.card-box {
+    font-family: "Inconsolata", monospace;
+    position: relative;
+    width: 60%;
+    height: 25vh;
+    border-radius: 5px;
+    border-color: #6c6c6c;
+}
+
+.pointer{
+    cursor: pointer;
+    margin-right: 1rem;
+}
+.code-options{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    button{
+        background-color: #2d2d2d;
+        border: #535353 1px solid;
+        color: white;
+        height: 120px;
+        border-radius: 15px;
+        min-width: 130px;
+        max-width: 220px;
+        width: 20%;
+        margin: 0 0.5rem 0 0.5rem;
+        padding: 1rem;
+    }
+    .copied{
+        background-color: #3a3a3a;
+    }
+    width: 55%;
+    align-self: center;
+}
+
+.code-examples{
+    color: white;
+    margin: 0 0 2rem 0;
+}
+
+.text-area {
+    // position: absolute;
+    width: 100%;
+    height: 125px;
+    resize: none;
+    border: none;
+    border-color: transparent;
+    background-color: #535353;
+    color: white;
+    border-radius: 5px 5px 0 0;
+}
+
+.text-area:focus,
+.text-area:focus-visible,
+.text-area:active {
+    border: 0 !important;
+    outline: transparent;
+    border-color: transparent !important;
+}
+
+pre{
+    background-color: #1b1b1b !important;
+    border-radius: 5px !important;
+}
+
+.code-snippet {
+    background-color: #1b1b1b;
+    border-radius: 5px;
+    color: white;
+    width: 60%;
+    padding: 2rem;
+    max-height: 500px;
+}
+
+.markdown-snippet {
+    width: 60%;
+    color: white;
+    padding: 2rem;
+
+}
+
+.markdown{
+    color: white;
+
+}
+
+.spinner-border {
+    color: white
+}
+
+.snippet-title, .snippet-title-response {
+    margin-top: 4rem;
+    font-family: "Inconsolata", monospace;
+    width: 60%;
+    color: white;
+    align-self: center;
+    text-align: left;
+    justify-self: center;
+}
+
+.snippet-title-response{
+    text-align: right;
+}
+// .sent{
+//     width: 60%;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+// }
+
+// .received{
+//     width: 60%;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-end;
+// }
+
+.chat-entry {
+    width: 100%;
+}
+
+.chat-container {
+    width: 100%;
+    align-self: center;
+    justify-self: center;
+}

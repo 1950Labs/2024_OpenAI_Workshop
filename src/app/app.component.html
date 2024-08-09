@@ -1,0 +1,71 @@
+<div class="chat h-75 w-100 d-flex flex-column justify-content-center align-items-center">
+  <div class="chat-container h-100 overflow-y-auto">
+    @if(loading)
+    {
+    <div class=" d-flex justify-content-center align-items-center w-100 h-100">
+      <div class="spinner-border" role="status"></div>
+    </div>
+    }
+    @else {
+
+    @if(message){
+    <div class="d-flex flex-column justify-content-center align-items-center chat-entry">
+      <h4 class="snippet-title d-flex flex-row">
+        <div (click)="clearMessage()" class="pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" style="fill: #ffffff;">
+            <path fill="#ffffff" d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707
+          7.707 1.414-1.414L6.414 13H21z"></path>
+          </svg>
+        </div>
+        Mensaje enviado
+      </h4>
+      <pre class="code-snippet"><code [highlight]="message.sent" language="html"></code></pre>
+      <h4 class="snippet-title-response">Respuesta</h4>
+      <div class="markdown" [innerHTML]="message.received"></div>
+    </div>
+    }
+    @else {
+    <div class="d-flex flex-column justify-content-center align-items-center h-100 w-100">
+      <div class="d-flex flex-row justify-content-between align-items-center code-options">
+        @for(codeExample of _codeExamples; track codeExample.id){
+        @if(copiedToClipboard != codeExample.id){
+        <button (click)="copyToClipboard(codeExample.code, codeExample.id)">{{codeExample.name}}</button>
+        }
+        @else {
+        <button class="copied">¡Copiado al portapapeles!</button>
+        }
+        }
+      </div>
+    </div>
+    }
+    }
+  </div>
+</div>
+<div class="card-box d-flex flex-column justify-content-center align-items-center">
+  <textarea class="text-area" [(ngModel)]="code"></textarea>
+  <div ngbDropdown placement="top-start"
+    class=" options d-flex justify-content-between align-items-center dropdown-btn  align-self-start justify-self-start">
+    <button type="button" class="btn text-white d-flex justify-content-center align-items-center" id="dropdownBasic2"
+      ngbDropdownToggle (click)="changeAction(actionSelected?.id)">
+      <b>{{actionSelected?.name}}</b>
+    </button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+      @for(action of this._actions; track action){
+      @if(action.id != actionSelected?.id){
+      <button ngbDropdownItem (click)="changeAction(action?.id)">{{action?.name}}</button>
+      }
+      }
+    </div>
+    @if(!loading){
+    <button type="button" (click)="submitCode()" class="send-btn btn d-flex justify-content-between align-items-center">
+      <b>Enviar</b>
+      <i class="bi bi-arrow-right mb-0 h4"></i>
+    </button>
+    }
+    @else {
+    <button type="button" (click)="submitCode()" class="send-btn btn d-flex justify-content-between align-items-center">
+      <b>Cargando...</b>
+    </button>
+    }
+  </div>
+</div>

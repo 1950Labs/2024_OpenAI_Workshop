@@ -1,2 +1,11 @@
-# 2024_OpenAI_Workshop
-Repositorio de código para el Workshop "Introducción práctica a la API de OpenAI
+# WorkshopWebApp
+
+Este proyecto usa Angular 18.0.4 + Node 18.
+
+# Instalación
+
+Para ejecutar la aplicación, instalar dependencias con `npm install`.
+
+## Development server
+
+Ejecutar `ng serve` para crear un servidor de desarrollo. Navegar hasta `http://localhost:4200/`.
