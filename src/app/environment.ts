@@ -1,3 +1,3 @@
 export const environment = {
-    apiKey: "sk-proj-DVgyAsynm7dj_XXXXvKsuWh4oOWn0SeAkouZtxTn5ZPQ1Talvi2_iGPrdggYQiYnMVuRMGNrcVT3BlbkFJhyfo652q6WswSbCwmG5QA7y9Tq2Xod1QAs-uRfRreEILitGNR8siT2PpWPYzc9D0TMjkgfo_8A"
+    apiKey: "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"
 }

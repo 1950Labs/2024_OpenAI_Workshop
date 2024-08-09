@@ -19,7 +19,7 @@ export class ChatGPTService {
   refactorCode(input: string) {
     return this._http.post(this._apiUrl,
       {
-        model: 'gpt-4o',
+        model: 'gpt-4o-mini',
         messages: [
           {
             role: "system",
